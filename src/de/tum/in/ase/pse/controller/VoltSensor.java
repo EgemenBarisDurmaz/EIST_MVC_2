@@ -44,12 +44,12 @@ public class VoltSensor {
 		 * For some reason we currently only have a static target voltage. Let us fix this problem:
 		 * 2.1 TODO: Update the value calculation by using the machine's target voltage instead of the static one here
 		 */
-		int targetVoltage = 230;
+		int targetVoltage = this.machine.getTargetVoltage();
 		int value = (int) Math.max(Math.sin(timestamp) * 2 + targetVoltage, 0);
 
 		/**
 		 * 2.2 TODO: Update the machine's current voltage (the new value) using the machine's setter
 		 */
-
+		this.machine.setCurrentVoltage(value);
 	}
 }

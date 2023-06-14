@@ -26,6 +26,7 @@ public class TransistorMachine extends Machine {
 
 	public void setTransistorSize(int transistorSize) {
 		this.transistorSize = transistorSize;
+		notifyObservers();
 	}
 
 	public void setTransistorType(TransistorType transistorType) {
