@@ -7,5 +7,5 @@ import de.tum.in.ase.pse.model.Machine;
  */
 public interface Observer {
 
-	void update(Machine machine);
+    void update(Machine machine);
 }
