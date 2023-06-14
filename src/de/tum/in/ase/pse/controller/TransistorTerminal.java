@@ -3,6 +3,7 @@ package de.tum.in.ase.pse.controller;
 import de.tum.in.ase.pse.model.GateType;
 import de.tum.in.ase.pse.model.TransistorMachine;
 import de.tum.in.ase.pse.model.TransistorType;
+import de.tum.in.ase.pse.utils.FactoryException;
 
 /**
  * The controller class for the model TransistorMachine
@@ -28,6 +29,12 @@ public class TransistorTerminal {
 		 *          by the machine's min- and max-temperature. If in range, set the machines target temperature, \
 		 *          if not throw a new Factory Exception
 		 */
+		if (targetTemperature >= machine.getMinTemperature() && targetTemperature<= machine.getMaxTemperature()) {
+			machine.setTargetTemperature(targetTemperature);
+		}
+		else {
+			throw new FactoryException("");
+		}
 	}
 
 	/**
@@ -41,6 +48,12 @@ public class TransistorTerminal {
 		 *          by the machine's min- and max-temperature. If in range, set the machines target voltage, \
 		 *          if not throw a new Factory Exception
 		 */
+		if (targetVoltage >= machine.getMinVoltage() && targetVoltage<= machine.getMaxVoltage()) {
+			machine.setTargetVoltage(targetVoltage);
+		}
+		else {
+			throw new FactoryException("");
+		}
 	}
 
 	/**
@@ -53,6 +66,12 @@ public class TransistorTerminal {
 		 * 3. TODO: Implement this function by checking, if the passed transistorSize is in the range [7, 22] \
 		 *          If in range, set the machines target transistorSize , if not throw a new Factory Exception
 		 */
+		if (transistorSize >= 7 && transistorSize<= 22) {
+			machine.setTransistorSize(transistorSize);
+		}
+		else {
+			throw new FactoryException("");
+		}
 	}
 
 	/**
