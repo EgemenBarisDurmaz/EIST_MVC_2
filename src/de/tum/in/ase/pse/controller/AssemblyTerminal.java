@@ -13,7 +13,7 @@ public class AssemblyTerminal {
 
     private final AssemblyMachine machine;
     private final int MAX_SPACE = 60;
-    private final int MIN_SPACE = 27;
+    private final int minSpace = 27;
 
     public AssemblyTerminal(AssemblyMachine assemblyMachine) {
         this.machine = assemblyMachine;
@@ -65,7 +65,7 @@ public class AssemblyTerminal {
          * 3. TODO: Implement this function by checking, if the passed space is in the range [27, 60] \
          *          If in range, set the machines target space , if not throw a new Factory Exception
          */
-        if (space >= MIN_SPACE && space <= MAX_SPACE) {
+        if (space >= minSpace && space <= MAX_SPACE) {
             machine.setSpaceBetweenTrans(space);
         } else {
             throw new FactoryException("");
