@@ -2,6 +2,7 @@ package de.tum.in.ase.pse.model;
 
 import de.tum.in.ase.pse.view.Observer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ public abstract class Machine {
 	/**
 	 * 1.1 TODO: Create a list for the observers
 	 */
-    private List<Observer> observers;
+    private List<Observer> observers = new ArrayList<>();
 
 
 	/**
