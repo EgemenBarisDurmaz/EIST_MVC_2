@@ -133,5 +133,13 @@ public abstract class Machine {
 	public int getCurrentTemperature() {
 		return currentTemperature;
 	}
+
+	public List<Observer> getObservers() {
+		return observers;
+	}
+
+	public void setObservers(List<Observer> observers) {
+		this.observers = observers;
+	}
 }
 
