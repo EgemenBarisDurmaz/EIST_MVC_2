@@ -45,10 +45,11 @@ public class TemperatureSensor {
 		 * For some reason we currently only have a static target temperature. Let us fix this problem:
 		 * 2.1 TODO: Update the value calculation by using the machine's target temperature instead of the static one here
 		 */
-		int targetTemperature = 42;
+		int targetTemperature = this.machine.getTargetTemperature();
 		int value = (int) Math.max(Math.sin(timestamp) * MULTIPLIER + targetTemperature, 0);
 		/**
 		 * 2. TODO: Update the machine's current temperature (the new value) using the machine's setter
 		 */
+		this.machine.setCurrentTemperature(value);
 	}
 }
