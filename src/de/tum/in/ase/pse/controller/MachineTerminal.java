@@ -1,6 +1,7 @@
 package de.tum.in.ase.pse.controller;
 
 import de.tum.in.ase.pse.model.Machine;
+import de.tum.in.ase.pse.utils.FactoryException;
 
 /**
  * The (terminal) controller superclass
@@ -26,6 +27,12 @@ public class MachineTerminal {
 		 *          by the machine's min- and max-temperature. If in range, set the machines target temperature, \
 		 *          if not throw a new Factory Exception
 		 */
+		if (targetTemperature >= machine.getMinTemperature() && targetTemperature<= machine.getMaxTemperature()) {
+			machine.setTargetTemperature(targetTemperature);
+		}
+		else {
+			throw new FactoryException("");
+		}
 	}
 
 	/**
@@ -39,5 +46,11 @@ public class MachineTerminal {
 		 *          by the machine's min- and max-temperature. If in range, set the machines target voltage, \
 		 *          if not throw a new Factory Exception
 		 */
+		if (targetVoltage >= machine.getMinVoltage() && targetVoltage<= machine.getMaxVoltage()) {
+			machine.setTargetVoltage(targetVoltage);
+		}
+		else {
+			throw new FactoryException("");
+		}
 	}
 }
