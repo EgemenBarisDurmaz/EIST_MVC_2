@@ -16,11 +16,11 @@ public class VoltSensor {
 	/**
 	 * 1.1 TODO: Add a "machine" attribute for a machine the sensor should control AND update the constructor accordingly
 	 */
-
+	private Machine machine;
 	private static int timestamp = 0;
 
 	public VoltSensor(Machine machine) {
-
+		this.machine = machine;
 		//for simulating regular sensor input/update
 		Timeline beat = new Timeline(
 				new KeyFrame(Duration.ZERO, event -> sendValue()),

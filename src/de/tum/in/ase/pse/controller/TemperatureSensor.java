@@ -16,12 +16,12 @@ public class TemperatureSensor {
 	/**
 	 * 1.1 TODO: Add a "machine" attribute for a machine the sensor should control AND update the constructor accordingly
 	 */
-
+	private Machine machine;
 	private static final int MULTIPLIER = 3;
 	private static int timestamp = 0;
 
 	public TemperatureSensor(Machine machine) {
-
+		this.machine = machine;
 		//for simulating regular sensor input/update
 		Timeline beat = new Timeline(
 				new KeyFrame(Duration.ZERO, event -> sendValue()),
